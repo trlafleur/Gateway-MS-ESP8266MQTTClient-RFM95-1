@@ -6,11 +6,11 @@
  *  DATE         REV  DESCRIPTION
  *  -----------  ---  ----------------------------------------------------------
  *  1-Dec-2016 1.0a   TRL - first with RFM95
- *  27-Dec-2016 1.1a  TRL - 
+ *  3-Dec-2016 1.1a  TRL - freq change to 928.5MHz
  *  
  *
- *  Notes:  1)  Tested with Arduino 1.6.13
- *          2)  MySensor 2.1b 4 Dec 2016
+ *  Notes:  1)  Tested with Arduino 1.8.0
+ *          2)  MySensor 2.1 30 Dec 2016
  *    
  *    
  *    TODO:   
@@ -25,7 +25,7 @@
 // Enable debug prints to serial monitor
 #define MY_DEBUG
 //#define MY_SPECIAL_DEBUG
-#define MY_DEBUG_VERBOSE_RFM95
+//#define MY_DEBUG_VERBOSE_RFM95
 
 
 #if defined(ARDUINO_ARCH_ESP8266)
@@ -51,7 +51,7 @@
 #define MY_RFM95_TX_POWER               23          // max is 23
 //#define MY_RFM95_ATC_MODE_DISABLED
 #define MY_RFM95_ATC_TARGET_RSSI        (-60)
-#define MY_RFM95_FREQUENCY              (915.0f)
+#define MY_RFM95_FREQUENCY              (928.5f)
 
 #define MY_GATEWAY_MQTT_CLIENT
 #define MY_GATEWAY_ESP8266
@@ -61,7 +61,7 @@
 #define MY_MQTT_SUBSCRIBE_TOPIC_PREFIX "MG1-in"
 
 // Set MQTT client id
-#define MY_MQTT_CLIENT_ID "MySensors-2"
+#define MY_MQTT_CLIENT_ID "MySensor-GW"
 
 // Enable these if your MQTT broker requires usenrame/password
 //#define MY_MQTT_USER "username"

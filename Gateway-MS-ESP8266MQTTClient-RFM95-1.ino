@@ -9,12 +9,13 @@
  *  3-Dec-2016 1.1a  TRL - freq change to 928.5MHz
  *  
  *
- *  Notes:  1)  Tested with Arduino 1.8.0
- *          2)  MySensor 2.1 30 Dec 2016
+ *  Notes:  1)  Tested with Arduino 1.8.1
+ *          2)  MySensor 2.1.1 30 Dec 2016
  *    
  *    
  *    TODO:   
  *    
+ *    updated to use: iot.winlink.org as gateway
  *    
  */
 /* ************************************************************************************** */
@@ -83,7 +84,9 @@
 #define MY_IP_SUBNET_ADDRESS 255,255,255,0
 
 // MQTT broker ip address.
-#define MY_CONTROLLER_IP_ADDRESS 192, 94, 167, 32
+//#define MY_CONTROLLER_IP_ADDRESS 192, 94, 167, 32   // DS2
+//#define MY_CONTROLLER_IP_ADDRESS 199, 73, 55, 103 // iot.winlink.org
+#define MY_CONTROLLER_URL_ADDRESS "iot.winlink.org"
 
 // The MQTT broker port to to open
 #define MY_PORT 1883
@@ -118,7 +121,7 @@
  // this is part of MySensor core 
 void before() 
 { 
-  Serial.println ("***In before***");
+  Serial.println ("*** In before***");
   //WiFi.mode(WIFI_AP);    // : set mode to WIFI_AP, WIFI_STA, or WIFI_AP_STA or WIFI_OFF
   //wifi_set_opmode_current(STATIONAP_MODE);
   //wifi_set_opmode_current(STATION_MODE);
@@ -126,7 +129,7 @@ void before()
 
 void setup() 
 {
-  Serial.println("***In Setup***");
+  Serial.println("*** In Setup***");
   }
 
 void presentation() 
